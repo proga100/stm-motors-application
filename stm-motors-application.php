@@ -3,7 +3,7 @@
  Plugin Name: Motors Application
  Plugin URI:  https://stylemixthemes.com/plugins/
  Description: Motors Application - Car Dealership & Classified Listings Mobile App for Android & iOS Integration
- Version:     2.0
+ Version:     2.1
  Author:      StylemixThemes
  Author URI:  https://stylemixthemes.com/
  License:     GPL2
