@@ -340,4 +340,44 @@
         <Key>series</Key>
         <Value>Series</Value>
     </String>
+ <String>
+        <Key>required</Key>
+        <Value>Required</Value>
+    </String>
+ <String>
+        <Key>upload_image</Key>
+        <Value>Press to upload image</Value>
+    </String>
+ <String>
+        <Key>fill_the_form</Key>
+        <Value>Fill the form</Value>
+    </String>
+ <String>
+        <Key>search_result</Key>
+        <Value>Search result</Value>
+    </String>
+ <String>
+        <Key>private_seller</Key>
+        <Value>Private Seller</Value>
+    </String>
+<String>
+        <Key>no_comment</Key>
+        <Value>No comment</Value>
+    </String>
+<String>
+        <Key>cancel</Key>
+        <Value>Cancel</Value>
+    </String>
+<String>
+        <Key>ok</Key>
+        <Value>OK</Value>
+    </String>
+	<String>
+        <Key>car_deleted</Key>
+        <Value>Car deleted</Value>
+    </String>
+<String>
+        <Key>search_currently_not_working</Key>
+        <Value>Search currently not working</Value>
+    </String>
 </Strings>

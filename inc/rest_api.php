@@ -904,7 +904,7 @@ function stm_mra_get_filtered_listings_list()
 	$newListings = array();
 	$result = array('status' => 404, 'listings' => array(), 'showed_paramms' => '');
 	if ($listings->have_posts()) {
-		$gridOpt = get_option('grid_ exiview_settings', array());
+		$gridOpt = get_option('grid_view_settings', array());
 		$listOpt = get_option('list_view_settings', array());
 		$title = (!empty($gridOpt['go_two'])) ? $gridOpt['go_two'] : '';
 		$subTitle = (!empty($gridOpt['go_one'])) ? $gridOpt['go_one'] : '';
