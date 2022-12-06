@@ -3,7 +3,7 @@
  Plugin Name: Motors Application
  Plugin URI:  https://stylemixthemes.com/plugins/
  Description: Motors Application - Car Dealership & Classified Listings Mobile App for Android & iOS Integration
- Version:     3.1
+ Version:     3.2
  Author:      StylemixThemes
  Author URI:  https://stylemixthemes.com/
  License:     GPL2
@@ -12,7 +12,7 @@
  Domain Path: /languages
 */
 
-define( 'STM_MOTORS_APP_VERSION', '3.1' );
+define( 'STM_MOTORS_APP_VERSION', '3.2' );
 define( 'STM_MOTORS_APP_ROOT_FILE', __FILE__ );
 define( 'STM_MOTORS_APP_PATH', dirname( __FILE__ ) );
 define( 'STM_MOTORS_APP_INC_PATH', dirname( __FILE__ ) . '/inc/' );
