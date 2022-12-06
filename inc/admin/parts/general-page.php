@@ -190,7 +190,6 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 									});
 									// Restore the main ID when the add media button is pressed
 									jQuery('a.add_media').on('click', function () {
-										console.log('line 194');
 										wp.media.model.settings.post.id = wp_media_post_id;
 									});
 								});
@@ -249,7 +248,6 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 												// We set multiple to false so only get one image from the uploader
 												attachment = file_frame.state().get('selection').first().toJSON();
 												// Do something with attachment.id and/or attachment.url here
-												console.log(attachment, wp_media_post_id);
 												$(image_preview).attr('src', attachment.url).css('width', 'auto');
 												$(plchldr_image_attachment_id).val(attachment.id);
 												// Restore the main post ID
@@ -260,7 +258,7 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 										});
 										// Restore the main ID when the add media button is pressed
 										jQuery('a.add_media').on('click', function () {
-											console.log('line 259');
+
 											wp.media.model.settings.post.id = wp_media_post_id;
 										});
 									}
