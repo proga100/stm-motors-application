@@ -12,6 +12,7 @@ $secondColor = get_option( 'second_color', '#2d60f3' );
 wp_enqueue_media();
 $my_saved_attachment_post_id       = get_option( 'plchldr_attachment_id', 0 );
 $background_splash_screen_image_id = get_option( 'background_splash_screen_image_id', 0 );
+$splash_screen_logo_id = get_option( 'splash_screen_logo_id', 0 );
 /*Add A Car*/
 $stepOne   = get_option( 'add_car_step_one', "add_media,make,serie,ca-year,mileage,exterior-color" );
 $stepTwo   = get_option( 'add_car_step_two', "engine,fuel,transmission,drive,body,location,price" );
@@ -267,9 +268,34 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 											'#image-preview-background-splash-screen-image_id',
 											'#background_splash_screen_image_attachment_id',
 											'<?php echo esc_url( wp_get_attachment_image_url( $background_splash_screen_image_id ) ) ?>');
+								app_motors_set_image('#upload_image_button_splash_screen_logo_id',
+											'#image-preview-background-splash_screen_logo_id',
+											'#splash_screen_logo_attachment_id',
+											'<?php echo esc_url( wp_get_attachment_image_url( $splash_screen_logo_id ) ) ?>');
 								});
 							</script>
 						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<label><?php echo esc_html__( 'Splash Screen Logo', STM_MOTORS_APP_DOMAIN ); ?></label>
+							<div class='image-preview-wrapper'>
+								<?php if ( $splash_screen_logo_id != 0 ) : ?>
+									<img id='image-preview-splash_screen_logo_id'
+										 src='<?php echo esc_url( wp_get_attachment_image_url( $splash_screen_logo_id ) ) ?>'
+										 width='100' height='100' style='max-height: 100px; width: 100px;'>
+								<?php else: ?>
+									<img id='image-preview-splash_screen_logo_id' width='100'
+										 height='100' style='max-height: 100px; width: 100px;'>
+								<?php endif; ?>
+							</div>
+							<input id="upload_image_button_splash_screen_logo_id" type="button" class="button"
+								   value="<?php _e( 'Upload image' ); ?>"/>
+							<input type='hidden' name='splash_screen_logo_attachment_id' id='splash_screen_logo_attachment_id'
+								   value=''>
+						</div>
+						<div class="col-md-6"></div>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="v-pills-main-page" role="tabpanel"
