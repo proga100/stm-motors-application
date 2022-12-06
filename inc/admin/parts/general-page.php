@@ -197,6 +197,76 @@ $adInterstIosId = (!empty($adsSettings['ios_interstitial_id'])) ? $adsSettings['
                             </script>
                         </div>
                     </div>
+               <div class="row">
+                        <div class="col-md-6">
+                            <label><?php echo esc_html__( 'Background Splash Screen Image', STM_MOTORS_APP_DOMAIN ); ?></label>
+                            <div class='image-preview-wrapper'>
+                                <?php if ( $background_splash_screen_image_id != 0 ) : ?>
+                                    <img id='image-preview-background-splash-screen-image_id'
+                                         src='<?php echo esc_url( wp_get_attachment_image_url( $background_splash_screen_image_id ) ) ?>'
+                                         width='100' height='100' style='max-height: 100px; width: 100px;'>
+                                <?php endif; ?>
+                            </div>
+                            <input id="upload_image_button_background_splash_screen_image_id" type="button" class="button"
+                                   value="<?php _e( 'Upload image' ); ?>"/>
+                            <input type='hidden' name='background_splash_screen_image_attachment_id' id='background_splash_screen_image_attachment_id'
+                                   value=''>
+                        </div>
+                        <div class="col-md-6">
+                            <script type='text/javascript'>
+                                jQuery(document).ready(function ($) {
+									function app_motors_set_image(upload_image_button, image_preview, plchldr_image_attachment_id, my_saved_attachment_post_id) {
+										// Uploading files
+										let file_frame;
+										let wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
+										let set_to_post_id = my_saved_attachment_post_id; // Set this
+										jQuery(upload_image_button).on('click', function (event) {
+											event.preventDefault();
+											// If the media frame already exists, reopen it.
+											if (file_frame) {
+												// Set the post ID to what we want
+												file_frame.uploader.uploader.param('post_id', set_to_post_id);
+												// Open frame
+												file_frame.open();
+												return;
+											} else {
+												// Set the wp.media post id so the uploader grabs the ID we want when initialised
+												wp.media.model.settings.post.id = set_to_post_id;
+											}
+											// Create the media frame.
+											file_frame = wp.media.frames.file_frame = wp.media({
+												title: 'Select a image to upload',
+												button: {
+													text: 'Use this image',
+												},
+												multiple: false	// Set to true to allow multiple files to be selected
+											});
+											// When an image is selected, run a callback.
+											file_frame.on('select', function () {
+												// We set multiple to false so only get one image from the uploader
+												attachment = file_frame.state().get('selection').first().toJSON();
+												// Do something with attachment.id and/or attachment.url here
+												$(image_preview).attr('src', attachment.url).css('width', 'auto');
+												$(plchldr_image_attachment_id).val(attachment.id);
+												// Restore the main post ID
+												wp.media.model.settings.post.id = wp_media_post_id;
+											});
+											// Finally, open the modal
+											file_frame.open();
+										});
+										// Restore the main ID when the add media button is pressed
+										jQuery('a.add_media').on('click', function () {
+											wp.media.model.settings.post.id = wp_media_post_id;
+										});
+									}
+                                app_motors_set_image('#upload_image_button_background_splash_screen_image_id',
+										'#image-preview-background-splash-screen-image_id',
+										'#background_splash_screen_image_attachment_id',
+										'<?php echo esc_url( wp_get_attachment_image_url( $background_splash_screen_image_id ) ) ?>') ;
+								});
+                            </script>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-main-page" role="tabpanel"
                      aria-labelledby="v-pills-main-page-tab">
