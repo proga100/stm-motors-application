@@ -490,7 +490,15 @@ function stm_mra_get_settings()
 	$custom_logo_url = stm_me_get_wpcfto_img_src( 'logo', get_template_directory_uri() );
 	$logo =(!empty($custom_logo_url))?$custom_logo_url:'';
 	$plchldr_id = get_option('plchldr_attachment_id', 0);
+
+	$splash_screen_logo_id = get_option('splash_screen_logo_id', 0);
+	$background_splash_screen_image_id = get_option('background_splash_screen_image_id', 0);
+
 	$placeholder = ($plchldr_id == 0) ? STM_MOTORS_APP_URL . '/assets/img/car_plchldr.png' : wp_get_attachment_image_url($plchldr_id);
+
+	$splash_screen_logo = ($splash_screen_logo_id == 0) ? STM_MOTORS_APP_URL . '/assets/img/car_plchldr.png' : wp_get_attachment_image_url($splash_screen_logo_id);
+	$background_splash_screen_image = ($background_splash_screen_image_id == 0) ? STM_MOTORS_APP_URL . '/assets/img/car_plchldr.png' : wp_get_attachment_image_url($background_splash_screen_image_id);
+
 	$response = array(
 		'acv' => $cacheVersion,
 		'app_type' => $appType,
@@ -506,6 +514,8 @@ function stm_mra_get_settings()
 		'translations' => json_encode($translations),
 		'ads_settings' => json_encode($ads_settings),
 		'logo' => esc_url($logo),
+		'splash_screen_logo' => esc_url($splash_screen_logo),
+		'background_splash_screen_image' => esc_url($background_splash_screen_image),
 		'placeholder' => $placeholder
 	);
 	wp_send_json($response);
