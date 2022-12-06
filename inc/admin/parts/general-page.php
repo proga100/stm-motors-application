@@ -14,7 +14,7 @@ $secondColor = get_option( 'second_color', '#2d60f3' );
 wp_enqueue_media();
 
 $my_saved_attachment_post_id = get_option( 'plchldr_attachment_id', 0 );
-
+$background_splash_screen_image_id = get_option( 'background_splash_screen_image_id', 0 );
 /*Add A Car*/
 $stepOne = get_option( 'add_car_step_one', "add_media,make,serie,ca-year,mileage,exterior-color" );
 $stepTwo = get_option( 'add_car_step_two', "engine,fuel,transmission,drive,body,location,price" );
