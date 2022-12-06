@@ -24,7 +24,7 @@ if ( isset( $_POST['global_save'] ) ) {
     update_option( 'gsap_android', ( !empty( $_POST['gsap_android'] ) ) ? $_POST['gsap_android'] : '' );
     update_option( 'gsap_ios', ( !empty( $_POST['gsap_ios'] ) ) ? $_POST['gsap_ios'] : '' );
     if ( !empty( $_POST['plchldr_image_attachment_id'] ) ) update_option( 'plchldr_attachment_id', absint( $_POST['plchldr_image_attachment_id'] ) );
-  	if ( !empty( $_POST['plchldr_image_attachment_id'] ) ) update_option( 'splash_screen_logo_id', absint( $_POST['plchldr_image_attachment_id'] ) );
+  	if ( !empty( $_POST['splash_screen_logo_attachment_id'] ) ) update_option( 'splash_screen_logo_id', absint( $_POST['splash_screen_logo_attachment_id'] ) );
   	if ( !empty( $_POST['background_splash_screen_image_attachment_id'] ) ) update_option( 'background_splash_screen_image_id', absint( $_POST['background_splash_screen_image_attachment_id'] ) );
 
     update_option( 'inventory_view', ( !empty( $_POST['inventory_view'] ) ) ? $_POST['inventory_view'] : '' );

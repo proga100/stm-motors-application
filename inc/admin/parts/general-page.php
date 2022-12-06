@@ -211,7 +211,7 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 								<?php endif; ?>
 							</div>
 							<input id="upload_image_button_background_splash_screen_image_id" type="button" class="button"
-								   value="<?php _e( 'Upload image' ); ?>"/>
+								   value="<?php _e( 'Upload image' ); ?>" style="width: auto;"/>
 							<input type='hidden' name='background_splash_screen_image_attachment_id' id='background_splash_screen_image_attachment_id'
 								   value=''>
 						</div>
@@ -269,7 +269,7 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 											'#background_splash_screen_image_attachment_id',
 											'<?php echo esc_url( wp_get_attachment_image_url( $background_splash_screen_image_id ) ) ?>');
 								app_motors_set_image('#upload_image_button_splash_screen_logo_id',
-											'#image-preview-background-splash_screen_logo_id',
+											'#image-preview-splash_screen_logo_id',
 											'#splash_screen_logo_attachment_id',
 											'<?php echo esc_url( wp_get_attachment_image_url( $splash_screen_logo_id ) ) ?>');
 								});
@@ -291,7 +291,7 @@ $adInterstIosId   = ( ! empty( $adsSettings['ios_interstitial_id'] ) ) ? $adsSet
 								<?php endif; ?>
 							</div>
 							<input id="upload_image_button_splash_screen_logo_id" type="button" class="button"
-								   value="<?php _e( 'Upload image' ); ?>"/>
+								   value="<?php _e( 'Upload image' ); ?>" style="width: auto;"/>
 							<input type='hidden' name='splash_screen_logo_attachment_id' id='splash_screen_logo_attachment_id'
 								   value=''>
 						</div>
