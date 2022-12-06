@@ -380,4 +380,9 @@
         <Key>search_currently_not_working</Key>
         <Value>Search currently not working</Value>
     </String>
+    <String>
+        <Key>delete_account</Key>
+        <Value>Delete account</Value>
+    </String>
+    
 </Strings>
